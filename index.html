@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Queenadi Medical - South Africa's trusted partner in orthopedic implants and trauma care. Elite, compassionate, and innovative medical device distributor.">
+    <meta name="keywords" content="Queenadi Medical, orthopedic implants, trauma care, South Africa, medical devices, hospital support">
+    <meta name="author" content="Queenadi Medical (Pty) Ltd">
+    <title>Queenadi Medical | Elite Orthopedic Implants & Trauma Care</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<header class="elite-header">
+    <div class="container header-flex">
+        <img src="images/logo.png" alt="Queenadi Medical Logo" class="logo-header" height="56" width="auto">
+        <nav class="nav-right" aria-label="Main Navigation">
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#implants">Implants</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Open menu" type="button" tabindex="0">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="15" fill="#fff" stroke="#FFD700" stroke-width="2"/>
+                    <path d="M10 10v6a6 6 0 0 0 12 0v-6" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <circle cx="10" cy="10" r="2" fill="#FFD700" stroke="#222" stroke-width="1.5"/>
+                    <circle cx="22" cy="10" r="2" fill="#FFD700" stroke="#222" stroke-width="1.5"/>
+                    <circle cx="16" cy="22" r="3" fill="#FFD700" stroke="#222" stroke-width="2"/>
+                    <path d="M16 25v2" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </nav>
+    </div>
+    <div class="welcome-banner">
+        <h1 class="welcome-title">Welcome to Queenadi Medical</h1>
+        <p class="welcome-desc">Your trusted partner in orthopedic implants and trauma care. We are dedicated to fixing broken bones and supporting South African hospitals with quality, reliability, and expertise.</p>
+        <a href="#contact" class="find-us-btn" aria-label="Where to Find Us">Where to Find Us</a>
+    </div>
+</header>
+<script>
+    // Dropdown menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        // Ensure navMenu is hidden on mobile until toggled
+        function updateMenuDisplay() {
+            if (window.innerWidth <= 900) {
+                menuToggle.style.display = 'flex';
+                if (!navMenu.classList.contains('open')) {
+                    navMenu.style.display = 'none';
+                } else {
+                    navMenu.style.display = 'flex';
+                }
+            } else {
+                menuToggle.style.display = 'none';
+                navMenu.style.display = 'flex';
+                navMenu.classList.remove('open');
+            }
+        }
+        updateMenuDisplay();
+        window.addEventListener('resize', updateMenuDisplay);
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('open');
+            if (navMenu.classList.contains('open')) {
+                navMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'none';
+            }
+        });
+        menuToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navMenu.classList.toggle('open');
+                if (navMenu.classList.contains('open')) {
+                    navMenu.style.display = 'flex';
+                } else {
+                    navMenu.style.display = 'none';
+                }
+            }
+        });
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 900 && navMenu.classList.contains('open')) {
+                if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navMenu.classList.remove('open');
+                    navMenu.style.display = 'none';
+                }
+            }
+        });
+        // Animate welcome banner
+        const banner = document.querySelector('.welcome-banner');
+        if (banner) {
+            banner.classList.add('show');
+        }
+        // Animate sections on scroll
+        const animatedSections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.2 });
+        animatedSections.forEach(section => {
+            observer.observe(section);
+        });
+        // Smooth scroll for 'Where to Find Us' button
+        const findUsBtn = document.querySelector('.find-us-btn');
+        if (findUsBtn) {
+            findUsBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+    });
+</script>
+
+<main>
+    <section id="about" class="company-info">
+    <h2>About Queenadi Medical (Pty) Ltd</h2>
+    <p><strong>REG NO:</strong> 2019/225383/07</p>
+    <p>We are a medical devices distributor, specializing in orthopedic implants. The company is owned by Ms. Emily Masango, a passionate and experienced professional in orthopedic trauma implants. Our footprints extend to <strong>LIMPOPO</strong>, <strong>GAUTENG</strong>, <strong>NORTH WEST</strong>, and <strong>NORTHERN CAPE</strong>.</p>
+    <p>Established in 2019, our motto <span class="gold">"fixing broken bones is our priority"</span> drives us to import and supply high-quality orthopedic implants, assisting with the escalating burden of trauma cases in South African hospitals (private & public sector).</p>
+    <p>Our dedicated team—from head office, warehouse staff, drivers, to field agents—are available around the clock to assist orthopedic surgeons. We value feedback and recommendations from all our clients, using them for quality improvement and training to continue offering top-quality services.</p>
+</section>
+
+    <section id="services">
+        <h2>Why Choose Us</h2>
+        <ul class="why-choose">
+            <li>Fixing broken bones is our priority</li>
+            <li>Punctual and trustworthy</li>
+            <li>Customized services (every case is unique)</li>
+            <li>24hr service delivery across all departments</li>
+            <li>Friendly, experienced &amp; reliable staff</li>
+            <li>Hands-on operating theater support personnel</li>
+            <li>Quality implants and instruments from reputable international manufacturers</li>
+            <li>Custom implant designs based on surgeon feedback</li>
+        </ul>
+    </section>
+
+    <section id="implants">
+    <h2>Our Implants</h2>
+    <div class="implants-list">
+        <ul>
+            <!-- Sets -->
+            <li>Hand Set</li>
+            <li>Distal Fibula Set</li>
+            <li>Foot Set</li>
+            <li>Small Fragment Set</li>
+            <li>Distal Femur Set</li>
+            <li>Large Fragment Set</li>
+            <li>Distal Humerus Set</li>
+            <li>Proximal Tibia Set</li>
+            <li>Clavicle Set</li>
+            <li>Proximal Humerus Set</li>
+            <li>Distal Radius Set</li>
+            <!-- Nails -->
+            <li>Tens Nails</li>
+            <li>Gamma Nails</li>
+            <li>Tibia Nails</li>
+            <li>Femur Nails</li>
+            <!-- External Fixators -->
+            <li>External Fixators</li>
+            <!-- Sutures & Bone Replacements -->
+            <li>Suture Anchors</li>
+            <li>Cannulated screws (4.0mm-7.5mm)</li>
+            <li>Bone Cement</li>
+            <li>Bone Substitute (2cc &amp; 5cc)</li>
+        </ul>
+    </div>
+</section>
+
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <form class="contact-form" action="https://formspree.io/f/mrbljknd" method="POST">
+                <input type="text" name="_gotcha" style="display:none">
+                <input type="hidden" name="_next" value="/#contact">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            
+            <div class="contact-info">
+                <p><strong>Phone:</strong> 012 980 5177</p>
+                <p><strong>Email:</strong> admin@qdmed.co.za</p>
+                <p><strong>Additional:</strong> queenadi@qdmed.co.za</p>
+                
+                <div class="location-info">
+                    <h3>Our Location</h3>
+                    <p><strong>Karenpark, Akasia, Pretoria</strong></p>
+                    <p>12 Vinca Road<br>Karenpark, Akasia<br>Pretoria, 0118</p>
+                    
+                    <iframe src="https://www.bing.com/maps/embed?h=220&w=100%&cp=-25.6292~28.1016&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8&q=12%20Vinca%20Road%2C%20Karenpark%2C%20Akasia%2C%20Pretoria%2C%200118" 
+                            width="200" height="200" style="border:0; border-radius: 8px; margin-top: 1em;" allowfullscreen></iframe>
+                    <small><a href="https://www.bing.com/maps?q=12+Vinca+Road,+Karenpark,+Akasia,+Pretoria,+0118" target="_blank">View larger map</a></small>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="elite-footer">
+    <div class="container">
+        <p>&copy; 2025 Queenadi Medical. All rights reserved. | Designed with excellence and care.</p>
+    </div>
+</footer>
+
+</body>
+</html>
